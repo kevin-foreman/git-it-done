@@ -108,20 +108,28 @@ var displayRepos = function(repos, searchTerm) {
 // button click handler
 
 
-
 function buttonClickHandler() {
-  let buttonClickHandler = function (event) {
-    // get the language attribute from the clicked element
-    let language = event.target.getAttribute("data-language");
-    console.log(language);
-    if (language) {
-        getFeaturedRepos(language);
-  
-        // clear old content
-        repoContainerEl.textContent = "";
-    }
-  };
+  let language = event.target.getAttribute("data-language");
+  // console.log(language);
+  if (language) {
+    getFeaturedRepos(language);
+
+    repoContainerEl.textContent = "";
+  }
 };
+
+  // let buttonClickHandler = function (event) {
+  //   // get the language attribute from the clicked element
+  //   let language = event.target.getAttribute("data-language");
+  //   console.log(language);
+  //   if (language) {
+  //       getFeaturedRepos(language);
+  
+  //       // clear old content
+  //       repoContainerEl.textContent = "";
+  //   }
+  // };
+
 
 // add event listeners to forms
 userFormEl.addEventListener("submit", formSubmitHandler);
@@ -130,4 +138,4 @@ userFormEl.addEventListener("submit", formSubmitHandler);
 
 languageButtonsEl.addEventListener("submit", formSubmitHandler);
 
-// languageButtonsEl.addEventListener("click", buttonClickHandler);
+languageButtonsEl.addEventListener("click", buttonClickHandler);
