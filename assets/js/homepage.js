@@ -105,22 +105,29 @@ var displayRepos = function(repos, searchTerm) {
   }
 };
 
-// add event listeners to forms
-userFormEl.addEventListener("submit", formSubmitHandler);
-
 // button click handler
+
+
+
 function buttonClickHandler() {
-  var buttonClickHandler = function(event) {
-    var language = event.target.getAttribute("data-language");
+  let buttonClickHandler = function (event) {
+    // get the language attribute from the clicked element
+    let language = event.target.getAttribute("data-language");
     console.log(language);
     if (language) {
-      getFeaturedRepos(language);
-
-      //clear old content
-      repoContainerEl.textContent = "";
+        getFeaturedRepos(language);
+  
+        // clear old content
+        repoContainerEl.textContent = "";
     }
   };
 };
 
+// add event listeners to forms
+userFormEl.addEventListener("submit", formSubmitHandler);
+
 // add event listener to the language buttons
-languageButtonsEl.addEventListener("click", buttonClickHandler);
+
+languageButtonsEl.addEventListener("submit", formSubmitHandler);
+
+// languageButtonsEl.addEventListener("click", buttonClickHandler);
